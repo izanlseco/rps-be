@@ -2,11 +2,13 @@ package com.task.rpsbe.service;
 
 import com.task.rpsbe.model.Hand;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Random;
 
 @Slf4j
+@Service
 public class PickService implements IPickService {
 
     private final Random random = new Random();
