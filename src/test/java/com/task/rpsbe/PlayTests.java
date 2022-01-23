@@ -1,13 +1,12 @@
 package com.task.rpsbe;
 
 import com.task.rpsbe.model.Hand;
+import com.task.rpsbe.service.PlayService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
 
 @SpringBootTest
 public class PlayTests {
@@ -15,14 +14,12 @@ public class PlayTests {
 
     @BeforeEach
     public void setup() {
-        playService = mock(PlayService.class);
+        playService = new PlayService();
     }
 
     @Test
     public void shouldDrawWhenRockIsChosen() {
         int result = playService.playAHand(Hand.ROCK);
-
-        verify(playService, times(1)).playAHand();
 
         assertThat(result).isEqualTo(0);
     }
@@ -31,16 +28,12 @@ public class PlayTests {
     public void shouldWinPlayerTwoWhenPaperIsChosen() {
         int result = playService.playAHand(Hand.PAPER);
 
-        verify(playService, times(1)).playAHand();
-
         assertThat(result).isEqualTo(2);
     }
 
     @Test
     public void shouldWinPlayerOneWhenScissorsIsChosen() {
         int result = playService.playAHand(Hand.SCISSORS);
-
-        verify(playService, times(1)).playAHand();
 
         assertThat(result).isEqualTo(1);
     }
