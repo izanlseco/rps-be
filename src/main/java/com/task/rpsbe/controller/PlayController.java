@@ -4,13 +4,11 @@ import com.task.rpsbe.model.Hand;
 import com.task.rpsbe.service.IPickService;
 import com.task.rpsbe.service.IPlayService;
 import com.task.rpsbe.service.IScoreService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
 @RestController
 public class PlayController {
 
