@@ -1,5 +1,7 @@
 package com.task.rpsbe;
 
+import com.task.rpsbe.model.Score;
+import com.task.rpsbe.service.ScoreService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,10 +19,13 @@ public class ScoreTests {
 
     @Test
     public void shouldReturnEmptyScore() {
-        Score emptyScore = new Score(0, 0, 0 ,0);
         Score result = scoreService.getScore();
 
-        assertThat(result).isEqualTo(emptyScore);
+        assertThat(result).matches(r -> r.getTotalRoundsPlayed() == 0
+                && r.getTotalDraws() == 0
+                && r.getTotalWinsPlayerOne() == 0
+                && r.getTotalWinsPlayerTwo() == 0
+        );
     }
 
     @Test
