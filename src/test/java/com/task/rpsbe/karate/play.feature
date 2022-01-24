@@ -1,9 +1,9 @@
-Feature: PlayService validation
+Feature: Play validation
 
 Background:
   * def baseUrl = 'http://localhost:8080/'
 
-  Scenario: when 'play' endpoint is called 200 is returned
+  Scenario: when '/play' endpoint is called 200 is returned
     Given url baseUrl
     And path 'play'
     When method GET

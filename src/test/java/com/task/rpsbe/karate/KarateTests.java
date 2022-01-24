@@ -4,7 +4,11 @@ import com.intuit.karate.junit5.Karate;
 
 public class KarateTests {
     @Karate.Test
-    Karate testPickController() {
-        return Karate.run("play_hand").relativeTo(getClass());
+    Karate testPlayController() {
+        return Karate.run("play").relativeTo(getClass());
+    }
+    @Karate.Test
+    Karate testScoreController() {
+        return Karate.run("score").relativeTo(getClass());
     }
 }
