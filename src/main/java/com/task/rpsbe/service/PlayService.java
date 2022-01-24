@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlayService implements IPlayService {
     public int playAHand(Hand playedHand) {
-        log.debug("Playing the hand picked");
+        log.debug("Player two is playing with {}", playedHand);
         return getResultOfGame(playedHand);
     }
 
