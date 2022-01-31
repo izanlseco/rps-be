@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ScoreService implements IScoreService {
     private final Score score = new Score(0, 0, 0 ,0);
 
-    public void updateScore(int resultOfGame) {
+    public synchronized void updateScore(int resultOfGame) {
         log.info("Updating the score with {}", resultOfGame);
         score.setTotalRoundsPlayed(score.getTotalRoundsPlayed() + 1);
 
