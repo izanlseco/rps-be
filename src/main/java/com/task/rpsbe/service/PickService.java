@@ -16,10 +16,6 @@ public class PickService implements IPickService {
 
     public Hand pickAHand() {
         log.debug("Choosing a random hand");
-        return randomHandPicker();
-    }
-
-    private Hand randomHandPicker() {
         return listOfHand.get(random.nextInt(listOfHand.size()));
     }
 }
