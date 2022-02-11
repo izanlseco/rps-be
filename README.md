@@ -6,7 +6,7 @@ I've used Java OpenJDK 17, TDD with AssertJ, and some very basic testing of the 
 **Play endpoint:**
 
 ``
-GET localhost:8080/play
+POST localhost:8080/play
 ``
 #### Response example
 #### Draw
